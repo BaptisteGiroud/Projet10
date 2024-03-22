@@ -23,7 +23,7 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <div key={event.id}>
+        <div key={event.title}>
           <div
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
@@ -42,10 +42,11 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
+                  // eslint-disable-next-line react/no-array-index-key
                   key={event.id}
                   type="radio"
                   name="radio-button"
-                  defaultChecked={index === radioIdx}
+                  checked={index === radioIdx}
                 />
               ))}
             </div>
